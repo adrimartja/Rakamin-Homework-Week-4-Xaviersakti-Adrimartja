@@ -148,7 +148,7 @@ function compare(oddArray, evenArray) {
 
   if (maxIndexGanjil < maxIndexGenap) {
     console.log(`Max index ganjil < Max index genap`);
-  } else if (minIndexGanjil > minIndexGenap) {
+  } else if (maxIndexGanjil > maxIndexGenap) {
     console.log(`Max index ganjil > Max index genap`);
   } else {
     console.log(`Max index ganjil = Max index genap`);
