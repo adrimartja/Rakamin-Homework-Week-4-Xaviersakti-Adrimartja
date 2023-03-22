@@ -8,6 +8,7 @@ function getRandomInteger(min, max) {
 const bilanganUtama = [];
 
 function randomNumber(mainArray) {
+  
   for (let i = 0; i < 100; i++) {
     mainArray.push(getRandomInteger(1, 50));
   }
@@ -23,7 +24,7 @@ const bilanganIndexGenap = [];
 function evenArrayIndex(mainArray, evenArray) {
   for (let i = 0; i < mainArray.length; i++) {
     if (i % 2 == 0) {
-      evenArray.push(bilanganUtama[i]);
+      evenArray.push(mainArray[i]);
     }
   }
   return console.log(evenArray);
@@ -38,7 +39,7 @@ const bilanganIndexGanjil = [];
 function oddArrayIndex(mainArray, oddArray) {
   for (let i = 0; i < mainArray.length; i++) {
     if (i % 2 == 1) {
-      oddArray.push(bilanganUtama[i]);
+      oddArray.push(mainArray[i]);
     }
   }
   return console.log(oddArray);
