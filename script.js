@@ -1,39 +1,24 @@
 //Creating a function that generate random numbers with specified min and max value.
+
 function getRandomInteger(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
 //Creating an array with 100 random number (minimum number is 1 and maximum number is 50).
-
+console.log("--------------------Array with 100 random numbers--------------------");
 const bilanganUtama = [];
 
 function randomNumber(mainArray) {
-  
   for (let i = 0; i < 100; i++) {
     mainArray.push(getRandomInteger(1, 50));
   }
-  return console.log(mainArray);
+  return console.log(`Random Number = ${mainArray}`);
 }
 
 randomNumber(bilanganUtama);
 
-//Creating an array with even index number based on the previous array.
-
-const bilanganIndexGenap = [];
-
-function evenArrayIndex(mainArray, evenArray) {
-  for (let i = 0; i < mainArray.length; i++) {
-    if (i % 2 == 0) {
-      evenArray.push(mainArray[i]);
-    }
-  }
-  return console.log(evenArray);
-}
-
-evenArrayIndex(bilanganUtama, bilanganIndexGenap);
-
 //Creating an array with odd index number based on the previous array.
-
+console.log("--------------------Array with odd index number--------------------");
 const bilanganIndexGanjil = [];
 
 function oddArrayIndex(mainArray, oddArray) {
@@ -42,13 +27,28 @@ function oddArrayIndex(mainArray, oddArray) {
       oddArray.push(mainArray[i]);
     }
   }
-  return console.log(oddArray);
+  return console.log(`Odd Index Number = ${oddArray}`);
 }
 
 oddArrayIndex(bilanganUtama, bilanganIndexGanjil);
 
-console.log("----------------------------------------");
+//Creating an array with even index number based on the previous array.
+console.log("--------------------Array with even index number--------------------");
+const bilanganIndexGenap = [];
+
+function evenArrayIndex(mainArray, evenArray) {
+  for (let i = 0; i < mainArray.length; i++) {
+    if (i % 2 == 0) {
+      evenArray.push(mainArray[i]);
+    }
+  }
+  return console.log(`Even Index Number = ${evenArray}`);
+}
+
+evenArrayIndex(bilanganUtama, bilanganIndexGenap);
+
 //calculate total
+console.log("--------------------Calculate total--------------------");
 function totalArray(array) {
   let total = 0;
   for (let i = 0; i < array.length; i++) {
@@ -57,12 +57,14 @@ function totalArray(array) {
   return total;
 }
 
-console.log(`Total Bilangan Utama = ${totalArray(bilanganUtama)}`);
-console.log(`Total Bilangan Index Ganjil = ${totalArray(bilanganIndexGanjil)}`);
-console.log(`Total Bilangan Index Genap = ${totalArray(bilanganIndexGenap)}`);
+console.log(`Total of Random Number = ${totalArray(bilanganUtama)}`);
+console.log(`Total of Odd index Number = ${totalArray(bilanganIndexGanjil)}`);
+console.log(`Total of Even Index Number = ${totalArray(bilanganIndexGenap)}`);
 
-console.log("----------------------------------------");
-//function average
+
+
+//calculate average
+console.log("--------------------Calculate average--------------------");
 function average(array) {
   let total = 0;
   for (let i = 0; i < array.length; i++) {
@@ -71,12 +73,12 @@ function average(array) {
   return total / array.length;
 }
 
-console.log(`Rata-rata Bilangan Utama = ${average(bilanganUtama)}`);
-console.log(`Rata-rata Index Ganjil = ${average(bilanganIndexGanjil)}`);
-console.log(`Rata-rata Index Genap = ${average(bilanganIndexGenap)}`);
+console.log(`Average of Random Number = ${average(bilanganUtama)}`);
+console.log(`Average of Odd index Number = ${average(bilanganIndexGanjil)}`);
+console.log(`Average Even Index Number = ${average(bilanganIndexGenap)}`);
 
-console.log("----------------------------------------");
 //determining min number
+console.log("--------------------Minimum Number--------------------");
 function minNumber(array) {
   let min = array[0];
   for (let i = 0; i < array.length; i++) {
@@ -87,13 +89,12 @@ function minNumber(array) {
   return min;
 }
 
-console.log(`Min Bilangan Utama = ${minNumber(bilanganUtama)}`);
-console.log(`Min Index Ganjil = ${minNumber(bilanganIndexGanjil)}`);
-console.log(`Min Index Genap = ${minNumber(bilanganIndexGenap)}`);
+console.log(`Min of Random Number = ${minNumber(bilanganUtama)}`);
+console.log(`Min of Odd Index Number = ${minNumber(bilanganIndexGanjil)}`);
+console.log(`Min of Even Index Number = ${minNumber(bilanganIndexGenap)}`);
 
-
-console.log("----------------------------------------");
 //determining max number
+console.log("--------------------Maximum Number--------------------");
 function maxNumber(array) {
   let max = array[0];
   for (let i = 0; i < array.length; i++) {
@@ -104,58 +105,58 @@ function maxNumber(array) {
   return max;
 }
 
-console.log(`Max Bilangan Utama = ${maxNumber(bilanganUtama)}`);
-console.log(`Max Index Ganjil = ${maxNumber(bilanganIndexGanjil)}`);
-console.log(`Max Index Genap = ${maxNumber(bilanganIndexGenap)}`);
+console.log(`Max of Random Number = ${maxNumber(bilanganUtama)}`);
+console.log(`Max of Odd Index Number = ${maxNumber(bilanganIndexGanjil)}`);
+console.log(`Max of Even Index Number = ${maxNumber(bilanganIndexGenap)}`);
 
-console.log("----------------------------------------");
 //creating function for comparing the value between odd and even index of the array.
+console.log("--------------------Comparison--------------------");
 function compare(oddArray, evenArray) {
   let totalIndexGanjil = totalArray(oddArray);
   let totalIndexGenap = totalArray(evenArray);
- 
 
   if (totalIndexGanjil < totalIndexGenap) {
-    console.log(`Total index ganjil < total index genap`);
+    console.log(`Total of Odd Index Number < Total of Even Index Number`);
   } else if (totalIndexGanjil > totalIndexGenap) {
-    console.log(`Total index ganjil > total index genap`);
+    console.log(`Total of Odd Index Number > Total of Even Index Number`);
   } else {
-    console.log(`Total index ganjil = total index genap`);
+    console.log(`Total of Odd Index Number = Total of Even Index Number`);
   }
 
   let meanIndexGanjil = average(oddArray);
   let meanIndexGenap = average(evenArray);
 
   if (meanIndexGanjil < meanIndexGenap) {
-    console.log(`Rata-rata index ganjil < Rata-rata index genap`);
+    console.log(`Average of Odd Index Number < Average of Even Index Number`);
   } else if (meanIndexGanjil > meanIndexGenap) {
-    console.log(`Rata-rata index ganjil > Rata-rata index genap`);
+    console.log(`Average of Odd Index Number > Average of Even Index Number`);
   } else {
-    console.log(`Rata-rata index ganjil = Rata-rata index genap`);
+    console.log(`Average of Odd Index Number = Average of Even Index Number`);
   }
 
   let minIndexGanjil = minNumber(oddArray);
   let minIndexGenap = minNumber(evenArray);
 
   if (minIndexGanjil < minIndexGenap) {
-    console.log(`Min index ganjil < Min index genap`);
+    console.log(`Min of Odd Index Number < Min of Even Index Number`);
   } else if (minIndexGanjil > minIndexGenap) {
-    console.log(`Min index ganjil > Min index genap`);
+    console.log(`Min of Odd Index Number > Min of Even Index Number`);
   } else {
-    console.log(`Min index ganjil = Min index genap`);
+    console.log(`Min of Odd Index Number = Min of Even Index Number`);
   }
 
   let maxIndexGanjil = maxNumber(oddArray);
   let maxIndexGenap = maxNumber(evenArray);
 
   if (maxIndexGanjil < maxIndexGenap) {
-    console.log(`Max index ganjil < Max index genap`);
+    console.log(`Max of Odd Index Number < Max of Even Index Number`);
   } else if (maxIndexGanjil > maxIndexGenap) {
-    console.log(`Max index ganjil > Max index genap`);
+    console.log(`Max of Odd Index Number > Max of Even Index Number`);
   } else {
-    console.log(`Max index ganjil = Max index genap`);
+    console.log(`Max of Odd Index Number = Max of Even Index Number`);
   }
-
 }
 
 compare(bilanganIndexGanjil, bilanganIndexGenap);
+
+console.log("----------------------------------------");
